@@ -28,8 +28,7 @@ defmodule HexGrid.Layout do
     q = o.b0 * pt.x + o.b1 * pt.y
     r = o.b2 * pt.x + o.b3 * pt.y
 
-    {:ok, hex} = HexGrid.Hex.new(q, r, -q - r)
-    hex
+    HexGrid.Hex.new!(q, r, -q - r)
   end
 
   def hex_round(h) do
