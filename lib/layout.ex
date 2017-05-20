@@ -3,7 +3,7 @@ defmodule HexGrid.Layout do
 
   alias HexGrid, as: Grid
 
-  @type t :: %__MODULE__{orientation: Grid.Orientation.t, size: number, origin: number}
+  @type t :: %__MODULE__{orientation: Grid.Orientation.t, size: non_neg_integer, origin: Grid.Point.t}
 
   defstruct [:orientation, :size, :origin]
 
@@ -81,5 +81,4 @@ defmodule HexGrid.Layout do
   defp nudge(hex) do
     %{hex | q: hex.q - 1.0e-6, r: hex.r - 1.0e-6, s: hex.s + 2.0e-6}
   end
-
 end
