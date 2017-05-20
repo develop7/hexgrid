@@ -24,7 +24,7 @@ defmodule HexGrid.Hex do
   iex> Hex.new!(0, 1, 1)
   ** (ArgumentError) Invalid coordinates in hex given, coordinate scalars q, r and s in %Hex{q:0, r:1, s:1} do not sum to 0
   """
-  @spec new(number, number, number) :: t
+  @spec new!(number, number, number) :: t
   def new!(q, r, s) do
     if Float.round((q + r + s) / 1) == 0 do
       %Hex{q: q, r: r, s: s}
